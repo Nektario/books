@@ -1,18 +1,17 @@
 .App {
-    background-color: #fafafa;
     align-items: center;
 }
 
 #container {
     width: 1200px;
-    height: 100%;
 }
 
 header {
-    height: 200px;
+    height: 50px;
     text-align: center;
+    margin: 32px 0 32px 0;
 }
 
-#book-container {
-    margin: 40px;
+main {
+    margin-top: 32px;
 }

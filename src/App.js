@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar'
-import Book from './Book'
+import BookList from './BookList'
 import './App.css';
 
 class App extends Component {
@@ -11,8 +11,9 @@ class App extends Component {
                     <header>
                         <SearchBar></SearchBar>
                     </header>
-                    <main id='book-container'>
-                        <Book></Book>
+
+                    <main id='book-container' className='d-flex'>
+                        <BookList />
                     </main>
                 </div>
             </div>

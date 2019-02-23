@@ -1,0 +1,31 @@
+@import "@material/elevation/mdc-elevation";
+
+.book--card {
+    height: 296px;
+    width: 575px;
+    background-color: #fff;
+}
+.book--cover-photo {
+    background-color: orange;
+    width: 192px;
+    height: 296px;
+    //height: 100%;
+}
+.book--info {
+    padding: 0 8px 8px 8px;
+    background-color: #fff;
+}
+.book--title {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 100;
+}
+.book--author,
+.book--publisher {
+    font-size: 1.2rem;
+    color: gray;
+    font-weight: 400;
+}
+.book--description {
+    font-size: .8rem;
+}
