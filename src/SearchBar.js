@@ -10,8 +10,8 @@ function SearchBar({onSearch}) {
 
     function handleKeyUp(e) {
         // don't submit an empty search query
-        if (e.key === 'Enter' && e.target.value.trim() !== '') {
-            onSearch(searchTerms)
+        if (e.key === 'Enter' && searchTerms.trim() !== '') {
+            onSearch(searchTerms.trim().replace(/\s+/, ' '))
         }
     }
 
