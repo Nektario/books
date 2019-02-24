@@ -1,3 +1,5 @@
+@import '_common.scss';
+
 #search-bar {
     border: 1px solid gray;
     border-radius: 50px;
@@ -7,5 +9,5 @@
     outline: none;
 }
 #search-bar:focus {
-    border: 1px solid #DB6587;
+    border: 1px solid $secondary-color;
 }

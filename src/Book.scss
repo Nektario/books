@@ -1,31 +1,68 @@
-@import "@material/elevation/mdc-elevation";
+@import '@material/elevation/mdc-elevation';
+@import '_common.scss';
 
 .book--card {
     height: 296px;
     width: 575px;
     background-color: #fff;
+    margin-bottom: 42px;
 }
+
 .book--cover-photo {
-    background-color: orange;
+    padding: 8px;
+    flex-shrink: 0;
+    object-fit: cover;
     width: 192px;
     height: 296px;
     //height: 100%;
 }
+
 .book--info {
-    padding: 0 8px 8px 8px;
+    width: 100%;
+    padding: 24px 24px 8px 24px;
     background-color: #fff;
 }
+
 .book--title {
-    margin: 0;
-    font-size: 3rem;
-    font-weight: 100;
+    margin: 0 0 4px 0;
+    line-height: 1;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #333;
+
 }
 .book--author,
 .book--publisher {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: gray;
     font-weight: 400;
 }
+
 .book--description {
     font-size: .8rem;
+}
+
+.book--more-info-button {
+    margin-top: auto;
+    margin-left: auto;
+    border-radius: 3px;
+    height: 40px;
+    padding: 0 24px 0 24px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background-color: $secondary-color;
+    border: 1px solid white;
+    color: #fff;
+    text-transform: uppercase;
+    outline: 0;
+    border: 1px solid $secondary-color;
+}
+
+.book--more-info-button:hover {
+    background-color: $secondary-color-hover;
+    cursor: pointer;
+}
+
+.book--more-info-button:active {
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
 }

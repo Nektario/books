@@ -13,5 +13,7 @@ header {
 }
 
 main {
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 32px;
 }

@@ -1,17 +1,17 @@
 import React from 'react'
 import Book from './Book'
 
-function BookList(props) {
+function BookList({books}) {
     return (
         <>
             {books.map(book => 
-                <Book book={book}></Book>
+                <Book key={book.id} book={book}></Book>
             )}
         </>
     )
 }
 
-const books = [
+const booksz = [
 {
     "kind": "books#volume",
     "id": "Vk-oDAAAQBAJ",
