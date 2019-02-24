@@ -2,12 +2,12 @@ import React from 'react'
 import './Book.scss'
 
 function Book({book}) {
-    function resizeBookDescription(description) {
-        if (description && description.length > 150) {
-            description = description.substr(0, 147) + '...'
-        }
-        return description
-    }
+    // function resizeBookDescription(description) {
+    //     if (description && description.length > 150) {
+    //         description = description.substr(0, 147) + '...'
+    //     }
+    //     return description
+    // }
 
     function setBookThumbnail(imageLinks) {
         let thumbnailUrl
