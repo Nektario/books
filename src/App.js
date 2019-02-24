@@ -13,7 +13,10 @@ function App() {
 
         fetch(`${apiUrl}&q=${query}`)
             .then(response => response.json())
-            .then(bookResponse => { console.log(bookResponse); setBooks(bookResponse.items)})
+            .then(bookResponse => { 
+                console.log(bookResponse);
+                setBooks(bookResponse.items)
+            })
             .catch(err => {
                 console.log(err)
             })
