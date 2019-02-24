@@ -16,7 +16,6 @@ function App() {
         fetch(url)
             .then(response => response.json())
             .then(bookResponse => { 
-                console.log(bookResponse);
                 setBooks(bookResponse.items)
             })
             .catch(err => {
