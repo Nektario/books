@@ -3,14 +3,15 @@ import SearchBar from './SearchBar'
 import BookList from './BookList'
 import './App.css';
 
-const API_URL = 'https://www.googleapis.com/books/v1/volumes?printType=books&startIndex=0&maxResults=10&fields=kind,totalItems,items(id,volumeInfo(title,authors,publisher,publishedDate,description,imageLinks))'
+const API_URL = 'https://www.googleapis.com/books/v1/volumes?printType=books&startIndex=0&maxResults=10&fields=kind,totalItems,items(id,selfLink,volumeInfo(title,authors,publisher,publishedDate,description,imageLinks/thumbnail,previewLink))'
+const API_KEY = process.env.REACT_APP_GOOGLE_BOOKS_API_KEY
 
 function App() {
     const [books, setBooks] = useState([])
 
     function handleSearch(searchTerms) {
         const query = searchTerms.split(' ').join('+')
-        const url = `${API_URL}&q=${query}&key=${process.env.REACT_APP_GOOGLE_BOOKS_API_KEY}`
+        const url = `${API_URL}&key=${API_KEY}&q=${query}`
 
         fetch(url)
             .then(response => response.json())
