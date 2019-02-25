@@ -5,7 +5,7 @@
     height: 296px;
     width: 575px;
     background-color: #fff;
-    margin-bottom: 42px;
+    margin: 0 8px 42px 8px;
 }
 
 .book--cover-photo {
@@ -45,3 +45,16 @@
     margin-top: auto;
     margin-left: auto;
 }
+
+@media only screen and (max-width: 650px) {
+    .book--title {
+        font-size: 1.4rem;
+    }
+    .book--info {
+        padding: 8px;
+    }
+    .book--card {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+} 
