@@ -11,8 +11,8 @@ function App() {
 
     function handleSearch(searchTerms) {
         const query = searchTerms.split(' ').join('+')
-        //const url = `${API_URL}&key=${API_KEY}&q=${query}`
-        const url = `${API_URL}&q=${query}`
+        const url = `${API_URL}&key=${API_KEY}&q=${query}`
+        //const url = `${API_URL}&q=${query}`
 
         fetch(url)
             .then(response => response.json())
