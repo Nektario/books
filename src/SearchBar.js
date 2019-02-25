@@ -9,22 +9,37 @@ function SearchBar({onSearch}) {
     }
 
     function handleKeyUp(e) {
+        if (e.key === 'Enter') {
+            submitSearch()
+        } 
+    }
+
+    function submitSearch() {
         // don't submit an empty search query
-        if (e.key === 'Enter' && searchTerms.trim() !== '') {
+        if (searchTerms.trim() !== '') {
             onSearch(searchTerms.trim().replace(/\s+/, ' '))
         }
     }
 
+
     return (
-        <input
-            type='text'
-            id='search-bar'
-            placeholder='Search Books'
-            aria-label='search-bar'
-            value={searchTerms}
-            onChange={handleUserInput}
-            onKeyUp={handleKeyUp}
-        />
+        <div id='search-container'>
+            <input
+                type='text'
+                id='search-bar'
+                placeholder='Search Books'
+                aria-label='search-bar'
+                value={searchTerms}
+                onChange={handleUserInput}
+                onKeyUp={handleKeyUp}
+            />
+            <button
+                id='search-button'
+                className='btn'
+                onClick={submitSearch}>
+                    <i id='search-icon' class='material-icons'>search</i>
+            </button>
+        </div>
     )
 }
 

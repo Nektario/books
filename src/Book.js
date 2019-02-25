@@ -41,11 +41,11 @@ function Book({book}) {
                 </span>
                 
                 <a
-                    className='book--more-info-button mdc-elevation--z4'
+                    className='btn book--more-info-button mdc-elevation--z4'
                     href={book.volumeInfo.previewLink}
                     target='_blank'
                     rel='noopener noreferrer'>
-                    More Info
+                        More Info
                 </a>
             </div>
         </div>
