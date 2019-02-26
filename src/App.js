@@ -8,19 +8,28 @@ const API_KEY = process.env.REACT_APP_GOOGLE_BOOKS_API_KEY
 
 function App() {
     const [books, setBooks] = useState([])
+    const [statusMessage, setStatusMessage] = useState('')
 
     function handleSearch(searchTerms) {
         const query = searchTerms.split(' ').join('+')
         const url = `${API_URL}&key=${API_KEY}&q=${query}`
         //const url = `${API_URL}&q=${query}`
 
+        setBooks([])
+        setStatusMessage('Loading...')
+
         fetch(url)
             .then(response => response.json())
-            .then(bookResponse => { 
-                setBooks(bookResponse.items)
+            .then(bookResponse => {
+                if (bookResponse.error) {
+                    setStatusMessage('Search Failed')
+                } else {
+                    setStatusMessage('')
+                    setBooks(bookResponse.items)
+                }
             })
             .catch(err => {
-                console.log(err)
+                setStatusMessage('Search Failed')
             })
     }
 
@@ -31,8 +40,9 @@ function App() {
                     <h1 id='title'>Book Search</h1>
                     <SearchBar onSearch={handleSearch}></SearchBar>
                 </header>
-
-                <main className='d-flex'>
+                
+                <main className='d-flex flex-center'>
+                    {statusMessage && <div id='status-area'>{statusMessage}</div>}
                     <BookList books={books} />
                 </main>
             </div>

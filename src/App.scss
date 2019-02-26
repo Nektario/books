@@ -23,6 +23,11 @@ main {
     color: gray;
 }
 
+#status-area {
+    font-size: 1.4rem;
+    color: gray;
+}
+
 @media only screen and (max-width: 1220px) {
     main {
         justify-content: space-around;
