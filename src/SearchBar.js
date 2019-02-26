@@ -37,7 +37,7 @@ function SearchBar({onSearch}) {
                 id='search-button'
                 className='btn'
                 onClick={submitSearch}>
-                    <i id='search-icon' class='material-icons'>search</i>
+                    <i id='search-icon' className='material-icons'>search</i>
             </button>
         </div>
     )
