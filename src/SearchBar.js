@@ -8,22 +8,16 @@ function SearchBar({onSearch}) {
         setSearchTerms(e.target.value)
     }
 
-    function handleKeyUp(e) {
-        if (e.key === 'Enter') {
-            submitSearch()
-        } 
-    }
-
-    function submitSearch() {
+    function submitSearch(e) {
+        e.preventDefault()
         // don't submit an empty search query
         if (searchTerms.trim() !== '') {
             onSearch(searchTerms.trim().replace(/\s+/, ' '))
         }
     }
 
-
     return (
-        <div id='search-container'>
+        <form id='search-container' onSubmit={submitSearch}>
             <input
                 type='text'
                 id='search-bar'
@@ -31,15 +25,15 @@ function SearchBar({onSearch}) {
                 aria-label='search-bar'
                 value={searchTerms}
                 onChange={handleUserInput}
-                onKeyUp={handleKeyUp}
             />
             <button
+                type='submit'
                 id='search-button'
                 className='btn'
                 onClick={submitSearch}>
                     <i id='search-icon' className='material-icons'>search</i>
             </button>
-        </div>
+        </form>
     )
 }
 
