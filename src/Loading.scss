@@ -1,0 +1,44 @@
+@import '_common.scss';
+
+#loading {
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    border-top: 3px solid #f48fb1;
+    border-radius: 50%;
+    // https://stackoverflow.com/questions/9245030/looking-for-a-swing-like-easing-expressible-both-with-jquery-and-css3
+    -webkit-animation: spinner 1.5s cubic-bezier(.02, .01, .47, 1) infinite;
+    animation: spinner 1.5s cubic-bezier(.02, .01, .47, 1) infinite;
+}
+  
+#loading:after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: $secondary-color;
+    -webkit-animation: spinner 1.5s linear infinite;
+    animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+    0%  {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0%  {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

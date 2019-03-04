@@ -1,9 +1,5 @@
 @import '_common.scss';
 
-.App {
-    align-items: center;
-}
-
 #container {
     width: 100%;
     max-width: 1200px;
@@ -16,7 +12,6 @@ header {
 main {
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 32px;
 }
 
 #title {
@@ -31,5 +26,12 @@ main {
 @media only screen and (max-width: 1220px) {
     main {
         justify-content: space-around;
+    }
+}
+
+@media only screen and (min-width: 1220px) {
+    html {
+        margin-left: calc(100vw - 100%);
+        margin-right: 0;
     }
 }
